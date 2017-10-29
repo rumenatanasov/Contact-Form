@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <div id="container">
+        <div></div>
+        <h3>Contact me today</h3>
+        Feel free to reach out to me
+        <h4>Contact info</h4>
+        <p>+359883xxxxx</p>
+        <p>atanasovrumen123@gmail.com</p>
+            <div>
+
+                <input id="to" type="email" placeholder="Enter Your Email" />
+                <br />
+                <input id="subject" type="text" placeholder="Write Subject"/>
+                <br />
+                <textarea id="content" cols="40" rows="5" placeholder="Write what you want to send"></textarea>
+                <br />
+                <button id="send_email">Send Message</button>
+                <span id="message"></span>
+            </div>
+</body>
+
+</html>
+<script>
+   $(document).ready(function(){
+    var from,to,subject,text;
+    $("#send_email").click(function(){      
+        to=$("#to").val();
+        subject=$("#subject").val();
+        text=$("#content").val();
+        $("#message").text("Sending E-mail...Please wait");
+        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
+        if(data=="sent")
+        {
+            $("#message").empty().html("Message sent");
+        }
+
+});
+    });
+});
+
+</script>

@@ -1,0 +1,12 @@
+{
+  "name": "sender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "contact.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "latest",
+    "express": "latest"
+  }
+}

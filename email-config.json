@@ -1,0 +1,9 @@
+{
+    "to": "your email address",
+     "auth": {
+        "user": "your email address",
+        "pass": "your pass"
+    },
+    "service": "gmail",
+    "host": "smtp.gmail.com"
+}
